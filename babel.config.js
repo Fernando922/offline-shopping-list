@@ -30,8 +30,10 @@ module.exports = {
           '@hooks': './src/hooks',
           '@routes': './src/routes,',
           '@mocks': './src/__mocks__',
+          '@database': './src/database',
         },
       },
     ],
+    ['@babel/plugin-proposal-decorators', { legacy: true }],
   ],
 };

@@ -1,5 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native';
-import Routes from './routes';
+import Routes from '@routes/index';
 import React from 'react';
 import { ThemeProvider } from 'styled-components/native';
 import theme from './theme';
