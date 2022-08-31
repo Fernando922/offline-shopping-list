@@ -23,6 +23,7 @@ Never forget your shopping list at home!
 ## :computer: Technologies
 
 - [React Native](https://facebook.github.io/react-native/)
+- [Watermelon DB](https://nozbe.github.io/WatermelonDB/)
 
 ## :thinking: How to use?
 
