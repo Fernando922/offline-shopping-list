@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import MainContainer from '@components/MainContainer';
 import { MainInput } from '@components/MainInput';
 import * as S from './styles';
-import { Alert } from 'react-native';
+import { Alert, TextInput } from 'react-native';
 import { Product } from '@database/model/Product';
 import snackbarMessage from '@utils/snackbarMessage';
 import database from '@database/index';
@@ -11,6 +11,8 @@ import database from '@database/index';
 function Home() {
   const [newItem, setNewItem] = useState('');
   const [productsList, setProductsList] = useState<Product[]>([]);
+
+  const inputRef = useRef<TextInput>(null);
 
   const persistProduct = async () => {
     try {
@@ -29,6 +31,7 @@ function Home() {
       Alert.alert('Ops!', 'Ocorreu um erro ao salvar o produto!');
     } finally {
       setNewItem('');
+      inputRef.current?.focus();
     }
   };
 
@@ -82,6 +85,7 @@ function Home() {
       <S.Title>Lista de compras</S.Title>
 
       <MainInput
+        ref={inputRef}
         value={newItem}
         onChangeText={setNewItem}
         onSubmitEditing={handleAddItem}
