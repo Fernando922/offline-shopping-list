@@ -54,6 +54,7 @@ function Home() {
       await database.write(async () => {
         await product.destroyPermanently();
       });
+
       snackbarMessage('Produto removido com sucesso!');
     } catch {
       Alert.alert('Ops!', 'Ocorreu um erro ao excluir o produto!');

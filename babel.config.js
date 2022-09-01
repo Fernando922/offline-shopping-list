@@ -7,7 +7,7 @@ module.exports = {
         moduleName: '@env',
         path: '.env',
         blacklist: null,
-        whitelist: ['BASE_URL'],
+        whitelist: ['BASE_URL', 'SENTRY_KEY'],
         safe: false,
         allowUndefined: true,
       },
